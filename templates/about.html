@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Learn CV filters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif
+        }
+
+        .w3-bar,
+        h1,
+        button {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .fa-anchor,
+        .fa-coffee {
+            font-size: 200px
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+                form="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        </div>
+    </div>
+
+
+    <!-- About Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+        <h2 class="w3-wide">About</h2>
+        
+        <p class="w3-justify">Welcome to the OpenCV Image Filters Web App! This application is designed to provide users
+            with an intuitive interface to apply various image processing filters using the powerful OpenCV library.
+            Our app supports a range of filters, including Sobel and Scharr,
+            allowing users to explore the capabilities of these image processing techniques in real-time.
+            The primary objective of this application is to demonstrate the use of OpenCV filters
+            in a simple and accessible manner. Whether you're an enthusiast looking to learn more about image
+            processing or a
+            developer seeking to experiment with different filters, our web app offers a user-friendly platform to
+            achieve your goals.</p>
+       
+        
+        <div class="w3-row w3-padding-32">
+            <p class="w3-opacity"><i>Contact Us</i></p>
+            <p class="w3-justify">For more information or if you have any questions, feel free to reach out to us at gogva@proton.me</p>
+        </div>
+    </div>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Learn CV filters</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif
+    }
+
+    .w3-bar,
+    h1,
+    button {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor,
+    .fa-coffee {
+      font-size: 200px
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-green w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+        form="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="{{ url_for('index') }}" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">FILTERS <i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+
+          <form action="/sobel_vertical" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Sobel Vertical</button>
+          </form>
+
+          <form action="/sobel_horizontal" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Sobel Horizontal</button>
+          </form>
+
+          <form action="/schar_vertical" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Schar Vertical</button>
+          </form>
+
+          <form action="/schar_horizontal" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Schar Horizontal</button>
+          </form>
+
+          <form action="/laplacian" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Laplacian</button>
+          </form>
+
+          <form action="/black_hat" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Black Hat</button>
+          </form>
+
+          <form action="/top_hat" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Top Hat</button>
+          </form>
+
+          <form action="/morphological_gradient" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Morphological Gradient</button>
+          </form>
+
+          <form action="/opening" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Opening</button>
+          </form>
+
+          <form action="/closing" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Closing</button>
+          </form>
+
+          <form action="/gabor" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Gabor Filter</button>
+          </form>
+
+          <form action="/gaussian_blur" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Gaussian Blur</button>
+          </form>
+
+          <form action="/erode" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Erode</button>
+          </form>
+
+          <form action="/dilate" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Dilate</button>
+          </form>
+
+          <form action="/box_filter" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Box Filter</button>
+          </form>
+
+          <form action="/blur" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Blur</button>
+          </form>
+
+          <form action="/bilateral_filter" method="GET">
+            <button type="submit" class="w3-bar-item w3-button">Bilateral Filter</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+
+      <form action="/sobel_vertical" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Sobel Vertical</button>
+      </form>
+
+      <form action="/sobel_horizontal" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Sobel Horizontal</button>
+      </form>
+
+      <form action="/schar_vertical" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Schar Vertical</button>
+      </form>
+
+      <form action="/schar_horizontal" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Schar Horizontal</button>
+      </form>
+
+      <form action="/laplacian" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Laplacian</button>
+      </form>
+
+      <form action="/black_hat" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Black Hat</button>
+      </form>
+
+      <form action="/top_hat" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Top Hat</button>
+      </form>
+
+      <form action="/morphological_gradient" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Morphological Gradient</button>
+      </form>
+
+      <form action="/opening" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Opening</button>
+      </form>
+
+      <form action="/closing" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Closing</button>
+      </form>
+
+      <form action="/gabor" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Gabor Filter</button>
+      </form>
+
+      <form action="/gaussian_blur" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Gaussian Blur</button>
+      </form>
+
+      <form action="/erode" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Erode</button>
+      </form>
+
+      <form action="/dilate" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Dilate</button>
+      </form>
+
+      <form action="/box_filter" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Box Filter</button>
+      </form>
+
+      <form action="/blur" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Blur</button>
+      </form>
+
+      <form action="/bilateral_filter" method="GET">
+        <button type="submit" class="w3-bar-item w3-button">Bilateral Filter</button>
+      </form>
+
+    </div>
+  </div>
+  <br><br><br>
+
+
+
+
+  <body>
+    <center>
+      <img src='{{ path }}' alt='Your Image' class="center" width=100% height=auto />
+    </center>
+  </body>
+
+
+  <body>
+    <center>
+      <p>{{ description }}</p>
+    </center>
+  </body>
+
+  </div>
+
+  <script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
